@@ -4,5 +4,6 @@ class Order < ApplicationRecord
   has_many :order_items, dependent: :destroy
 
   validates_presence_of :customer_name, :customer_address, :price, :tax, :total
+  accepts_nested_attributes_for :order_items
 
 end
