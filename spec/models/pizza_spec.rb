@@ -26,11 +26,11 @@ RSpec.describe Pizza, type: :model do
   end
   it "needs a unique name" do
     p1 = Pizza.new
-    p1.name = "Pepperoni"
+    p1.name = "Test"
     p1.price = 10.20
     p1.save
     p2 = Pizza.new
-    p2.name = "Pepperoni"
+    p2.name = "Test"
     p2.price = 10.20
     expect(p2.save).to be_falsey
   end
