@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_09_215203) do
+ActiveRecord::Schema.define(version: 2018_09_09_215654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "order_items", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "pizza_id"
+    t.integer "count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["pizza_id"], name: "index_order_items_on_pizza_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "customer_name", null: false
+    t.string "customer_address", null: false
+    t.decimal "price", null: false
+    t.decimal "discount", null: false
+    t.decimal "tax", null: false
+    t.decimal "total", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "pizzas", force: :cascade do |t|
     t.string "name", null: false
