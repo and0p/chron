@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get '/orders', :to => 'orders#index'
   post '/orders', :to => 'orders#create'
 
+  get '/', :to => 'orders#index'
+
 end
