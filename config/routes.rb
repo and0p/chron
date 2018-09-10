@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   post '/orders', :to => 'orders#create'
 
   get '/', :to => 'orders#index'
+  get '/place_order/', :to => 'orders#new'
 
 end
