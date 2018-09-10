@@ -9,8 +9,8 @@ class OrdersController < ApplicationController
     # Make sure user has passed order items
     if order_params[:order_items_attributes].any?
       @order = Order.create(order_params)#.except(:order_items_attributes))
-      @order.calculate_totals
       if @order.persisted?
+        @order.calculate_totals
         render status: 200, json: @order
       else
         render status: 500, text: "Internal error."

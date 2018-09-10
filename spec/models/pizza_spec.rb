@@ -9,18 +9,18 @@ RSpec.describe Pizza, type: :model do
   end
   it "is invalid without a price" do
     p = Pizza.new
-    p.name = "Pepperoni"
+    p.name = "Cheese"
     expect(p).to be_invalid
   end
   it "is invalid with a negative price" do
     p = Pizza.new
-    p.name = "Pepperoni"
+    p.name = "Cheese"
     p.price = -5.50
     expect(p).to be_invalid
   end
   it "is valid with a positive price and name" do
     p = Pizza.new
-    p.name = "Pepperoni"
+    p.name = "Cheese"
     p.price = 10.20
     expect(p).to be_valid
   end
