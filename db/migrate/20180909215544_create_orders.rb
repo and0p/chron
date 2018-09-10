@@ -3,10 +3,10 @@ class CreateOrders < ActiveRecord::Migration[5.2]
     create_table :orders do |t|
       t.string :customer_name, null: false
       t.string :customer_address, null: false
-      t.decimal :price, null: false
-      t.decimal :discount, null: false
-      t.decimal :tax, null: false
-      t.decimal :total, null: false
+      t.decimal :price
+      t.decimal :discount
+      t.decimal :tax
+      t.decimal :total
 
       t.timestamps
     end
