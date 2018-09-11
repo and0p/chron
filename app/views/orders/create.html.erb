@@ -1,0 +1,15 @@
+<h1>Order Placed!</h1>
+
+Here are your order details:
+<ul>
+  <li>Name: <%= @order.customer_name %></li>
+  <li>Address: <%= @order.customer_address %></li>
+</ul>
+<ul>
+  <li>Price: <%= @order.price %></li>
+  <li>Discount: <%= @order.discount %></li>
+  <li>Tax: <%= @order.tax %></li>
+  <li>Total: <%= @order.total %></li>
+</ul>
+
+<%= link_to "Back to Homepage", controller: "orders", action: "index" %>

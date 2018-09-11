@@ -10,12 +10,11 @@ class OrdersController < ApplicationController
       @order = Order.create(order_params)
       if @order.persisted?
         @order.calculate_totals
-        render status: 200, json: @order
       else
-        render status: 500, text: "Internal error."
+        render status: 500, plain: "Internal error."
       end
     else
-      render status: 400, text: "No items given."
+      render status: 400, plain: "No items given. Please press back and fill out the items and counts."
     end
   end
 
