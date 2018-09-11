@@ -1,5 +1,7 @@
 # Chron Pizzeria
 
+http://chron-pizzeria.herokuapp.com/
+
 Outstanding tasks:
 
 - ~~Ordering menu non-interactive~~ **This was implemented pretty painlessly with Cocoon**
@@ -24,3 +26,5 @@ Other notes:
 
 - Non-ideal VCS pattern
   - I typically follow [this pattern](https://nvie.com/posts/a-successful-git-branching-model/), but in case something came up I wanted the exercise to be at least partially complete, so I went with more of an "onion" pattern.
+- Heroku deployment is easier than it used to be.
+  - And thankfully now free for all smaller dynos? I was expecting to get charged since I was already using my one free dyno to do [important work](https://twitter.com/classicrockjb).
