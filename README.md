@@ -16,8 +16,11 @@ Outstanding tasks:
   - Fails for some reason. NOT_NULL exists on db level, so it works.
 - Could use an authenticated section for adding pizzas
   - Pizzas created with db:seed, seemed sufficient for exercise
+  - I've played with devise before. It's convenient but heavier than I had time to re-research.
+- Client-side validations + some back-end validations aren't implemented
+  - The user can submit multiple line items of the same item, rather than rolling them into the same item with a higher count, etc.
   
 Other notes:
 
 - Non-ideal VCS pattern
-  - I typically follow [this pattern](https://nvie.com/posts/a-successful-git-branching-model/), but in case something came up I wanted the exercise to be at least partially complete, so I went with more of an "onion" pattern. 
+  - I typically follow [this pattern](https://nvie.com/posts/a-successful-git-branching-model/), but in case something came up I wanted the exercise to be at least partially complete, so I went with more of an "onion" pattern.
