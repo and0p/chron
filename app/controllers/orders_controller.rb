@@ -6,8 +6,8 @@ class OrdersController < ApplicationController
 
   def create
     # Make sure user has passed order items
-    if order_params[:order_items_attributes].any?
-      @order = Order.create(order_params)#.except(:order_items_attributes))
+    if order_params.has_key?(:order_items_attributes) && !order_params[:order_items_attributes].empty?
+      @order = Order.create(order_params)
       if @order.persisted?
         @order.calculate_totals
         render status: 200, json: @order
@@ -20,6 +20,9 @@ class OrdersController < ApplicationController
   end
 
   def new
+    @order = Order.new
+    2.times do @order.order_items.build end
+    @pizzas = Pizza.all
   end
 
   def show
