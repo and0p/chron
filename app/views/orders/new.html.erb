@@ -1,16 +1,6 @@
 <h1>Place Order</h1>
 
-<%= form_for @order, html: { class: "form-group" } do |order| %>
-  Your Name: <%= order.text_field :customer_name  %><br>
-  Your Address: <%= order.text_field :customer_address %><br>
-  Select items:<br>
-  <%= order.fields_for :order_items do |item| %>
-    Pizza: <%= item.select :pizza_id, @pizzas.collect { |pizza| [pizza.name, pizza.id] } %>
-    Count: <%= item.number_field :count %>
-    <br>
-  <% end %><br>
-  <%= order.submit "Place Order" %>
-<% end %>
+<%= render 'new_order_form' %>
 
 <br>
 <%= link_to "Go Back", '/' %>

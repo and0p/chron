@@ -1,0 +1,12 @@
+<%= form_for @order, html: { class: "form-group" } do |order| %>
+  Your Name: <%= order.text_field :customer_name  %><br/>
+  Your Address: <%= order.text_field :customer_address %><br/>
+  Select items:<br/>
+  <div id="order_items">
+    <%= order.fields_for :order_items do |item| %>
+      <%= render 'order_item_fields', :f => item %><br/>
+    <% end %>
+    <%= link_to_add_association 'Add Item', order, :order_items %><br/>
+  </div>
+  <%= order.submit "Place Order" %>
+<% end %>

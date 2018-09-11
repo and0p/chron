@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
-    2.times do @order.order_items.build end
+    1.times do @order.order_items.build end
     @pizzas = Pizza.all
   end
 
@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
 
   # Define usable params
   def order_params
-    params[:order].permit(:customer_name, :customer_address, order_items_attributes: [ :pizza_id, :count ])
+    params[:order].permit(:customer_name, :customer_address, order_items_attributes: [ :id, :pizza_id, :count, :_destroy ])
   end
 
 end

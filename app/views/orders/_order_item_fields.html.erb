@@ -1,0 +1,5 @@
+<div class='nested-fields'>
+  Pizza: <%= f.select :pizza_id, @pizzas.collect { |pizza| [pizza.name, pizza.id] } %>
+  Count: <%= f.number_field :count %>
+  <%= link_to_remove_association "remove item", f %>
+</div>

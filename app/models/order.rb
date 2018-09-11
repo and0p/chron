@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
 
   has_many :pizzas, through: :order_items
-  has_many :order_items, dependent: :destroy
+  has_many :order_items, inverse_of: :order, dependent: :destroy
 
   validates_presence_of :customer_name, :customer_address # leaving these out for now :price, :tax, :total, :discount
   accepts_nested_attributes_for :order_items, allow_destroy: true
