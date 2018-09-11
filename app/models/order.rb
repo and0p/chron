@@ -7,7 +7,7 @@ class Order < ApplicationRecord
   accepts_nested_attributes_for :order_items, allow_destroy: true
 
   validate do
-    # check_item_count
+    #order_items.count > 0 # TODO I've seen this pattern elsewhere, getting unexpected results
   end
 
   def calculate_totals
