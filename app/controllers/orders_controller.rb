@@ -5,20 +5,12 @@ class OrdersController < ApplicationController
   end
 
   def create
-    # Make sure user has passed order items
-    if order_params.has_key?(:order_items_attributes) && !order_params[:order_items_attributes].empty?
-      @order = Order.create(order_params)
-      if @order.persisted?
-        @order.calculate_totals
-      end
-    else
-      render status: 400, plain: "No items given. Please press back and fill out the items and counts."
-    end
+    @order = Order.create(order_params)
   end
 
   def new
     @order = Order.new
-    1.times do @order.order_items.build end
+    @order.order_items.build
     @pizzas = Pizza.all
   end
 
